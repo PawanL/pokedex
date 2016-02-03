@@ -15,11 +15,11 @@ class PokemonCell: UICollectionViewCell {
     
     var pokemon: Pokemon!
     
-    func configureCell(pokemon:Pokemon){
+    func cellContent (pokemon:Pokemon){
         
         self.pokemon = pokemon
         
-        nameLabel.text = self.pokemon.name
+        nameLabel.text = self.pokemon.name.capitalizedString
         thumbnailImage.image = UIImage(named: "\(self.pokemon.PokeId)")
     
     }
