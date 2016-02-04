@@ -16,6 +16,9 @@
 		870430CD1C602E770062FDCA /* pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 870430CC1C602E760062FDCA /* pokemon.swift */; };
 		8708EC0B1C606BD200E22776 /* PokemonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8708EC0A1C606BD200E22776 /* PokemonCell.swift */; };
 		8708EC0E1C6086DB00E22776 /* csv.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8708EC0D1C6086DB00E22776 /* csv.swift */; };
+		8708EC121C61D1E200E22776 /* PokemonHollow.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8708EC111C61D1E200E22776 /* PokemonHollow.ttf */; };
+		8708EC141C61D32600E22776 /* PokemonSolid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8708EC131C61D32600E22776 /* PokemonSolid.ttf */; };
+		8708EC161C61D8E300E22776 /* pokemonTheme.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8708EC151C61D8E300E22776 /* pokemonTheme.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		870430CC1C602E760062FDCA /* pokemon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = pokemon.swift; sourceTree = "<group>"; };
 		8708EC0A1C606BD200E22776 /* PokemonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PokemonCell.swift; sourceTree = "<group>"; };
 		8708EC0D1C6086DB00E22776 /* csv.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = csv.swift; sourceTree = "<group>"; };
+		8708EC111C61D1E200E22776 /* PokemonHollow.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PokemonHollow.ttf; sourceTree = "<group>"; };
+		8708EC131C61D32600E22776 /* PokemonSolid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PokemonSolid.ttf; sourceTree = "<group>"; };
+		8708EC151C61D8E300E22776 /* pokemonTheme.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pokemonTheme.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +110,9 @@
 			isa = PBXGroup;
 			children = (
 				870430C91C602C8C0062FDCA /* pokemon.csv */,
+				8708EC111C61D1E200E22776 /* PokemonHollow.ttf */,
+				8708EC131C61D32600E22776 /* PokemonSolid.ttf */,
+				8708EC151C61D8E300E22776 /* pokemonTheme.mp3 */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -174,10 +183,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8708EC121C61D1E200E22776 /* PokemonHollow.ttf in Resources */,
 				870430C21C6029BE0062FDCA /* LaunchScreen.storyboard in Resources */,
+				8708EC141C61D32600E22776 /* PokemonSolid.ttf in Resources */,
 				870430BF1C6029BE0062FDCA /* Assets.xcassets in Resources */,
 				870430CA1C602C8C0062FDCA /* pokemon.csv in Resources */,
 				870430BD1C6029BE0062FDCA /* Main.storyboard in Resources */,
+				8708EC161C61D8E300E22776 /* pokemonTheme.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

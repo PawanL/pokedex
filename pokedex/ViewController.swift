@@ -7,21 +7,30 @@
 //
 
 import UIKit
+import AVFoundation
 
-class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UISearchBarDelegate {
 
     //MARK: - Outlets
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var searchBar: UISearchBar!
     
-    //Empty array with a dictionary inside
+        //Empty array with a dictionary inside
     var pokemon = [Pokemon]()
+    var filteredPokemon = [Pokemon]()
+    var audioPlayer: AVAudioPlayer!
+    var inSearchMode = false
     
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
         collectionView.dataSource = self
+        searchBar.delegate = self
+        searchBar.returnKeyType = UIReturnKeyType.Done
+        
         parseCSV()
+        initAudio()
     }
 
     func parseCSV (){
@@ -45,6 +54,21 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
     }
     
+    func initAudio() {
+        
+        let path = NSBundle.mainBundle().pathForResource("pokemonTheme", ofType: "mp3")!
+        
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOfURL: NSURL(string: path)!)
+            audioPlayer.prepareToPlay()
+            audioPlayer.numberOfLoops = -1
+            //audioPlayer.play()
+            
+        }catch let err as NSError{
+            print(err.debugDescription)
+        }
+    }
+    
     //MARK: - CollectionView
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -52,7 +76,14 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         if let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as? PokemonCell{
             
-            let pokemonCharacters = pokemon[indexPath.row]
+            let pokemonCharacters: Pokemon!
+            
+            if inSearchMode{
+                pokemonCharacters = filteredPokemon[indexPath.row]
+            }else{
+                pokemonCharacters = pokemon[indexPath.row]
+            }
+            
             cell.cellContent(pokemonCharacters)
             return cell
             
@@ -66,7 +97,12 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
     }
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 718
+        
+        if inSearchMode {
+            return filteredPokemon.count
+        }
+        
+        return pokemon.count
     }
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
@@ -76,10 +112,38 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
     }
     
     //MARK:- Misc
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        self.view.endEditing(true)
+    
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        view.endEditing(true)
     }
     
+    @IBAction func playMusicBtn(sender: AnyObject) {
+        
+        if audioPlayer.playing {
+            audioPlayer.stop()
+        }else{
+            audioPlayer.play()
+        }
+    }
     
+    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text == nil || searchBar.text == "" {
+            inSearchMode = false
+            view.endEditing(true)
+            collectionView.reloadData()
+            
+        }else{
+            
+            inSearchMode = true
+            let lower = searchBar.text!.lowercaseString
+            //$0 is grabbing an element. Similiar to var pokemon = pokemon[23]
+            //is a closure expression that will run for every element entered
+            filteredPokemon = pokemon.filter({$0.name.rangeOfString(lower) != nil})
+            
+            collectionView.reloadData()
+            
+        }
+    }
+
 }
 

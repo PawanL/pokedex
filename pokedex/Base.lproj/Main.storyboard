@@ -5,6 +5,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="PokemonSolid.ttf">
+            <string>PokemonSolidNormal</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -20,15 +25,67 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wHX-1k-rSO">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="51"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pokemon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" translatesAutoresizingMaskIntoConstraints="NO" id="ch6-Sz-oaJ">
+                                        <rect key="frame" x="192" y="16" width="217" height="27"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="9DO-oi-Bgl"/>
+                                            <constraint firstAttribute="width" constant="217" id="QDz-AB-PAA"/>
+                                            <constraint firstAttribute="height" constant="27" id="aKY-Qy-zfV"/>
+                                            <constraint firstAttribute="width" constant="217" id="hYO-zP-ddl"/>
+                                            <constraint firstAttribute="height" constant="27" id="wMQ-Kv-s6U"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="PokemonSolidNormal" family="Pokemon Solid" pointSize="24"/>
+                                        <color key="textColor" red="0.97254901959999995" green="0.74901960779999999" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="9DO-oi-Bgl"/>
+                                                <exclude reference="hYO-zP-ddl"/>
+                                                <exclude reference="wMQ-Kv-s6U"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iD4-N5-xjO">
+                                        <rect key="frame" x="556" y="18" width="36" height="23"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="36" id="efX-Ss-gY1"/>
+                                            <constraint firstAttribute="height" constant="23" id="yfO-Md-UXM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <state key="normal" title="Music">
+                                            <color key="titleColor" red="0.97254901959999995" green="0.74901960779999999" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="playMusicBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N4C-CV-lZh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" red="0.21241250715342641" green="0.47555509091011322" blue="0.84545951070218672" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="ch6-Sz-oaJ" firstAttribute="centerX" secondItem="wHX-1k-rSO" secondAttribute="centerX" id="2JL-5g-EC9"/>
+                                    <constraint firstItem="ch6-Sz-oaJ" firstAttribute="centerX" secondItem="wHX-1k-rSO" secondAttribute="centerX" id="2Sa-9r-785"/>
+                                    <constraint firstItem="iD4-N5-xjO" firstAttribute="trailing" secondItem="wHX-1k-rSO" secondAttribute="trailingMargin" id="6l6-XH-3Ar"/>
                                     <constraint firstAttribute="height" constant="51" id="Mhy-wj-Mlw"/>
+                                    <constraint firstItem="ch6-Sz-oaJ" firstAttribute="centerY" secondItem="wHX-1k-rSO" secondAttribute="centerY" id="V07-c7-4Wl"/>
+                                    <constraint firstItem="ch6-Sz-oaJ" firstAttribute="centerX" secondItem="wHX-1k-rSO" secondAttribute="centerX" id="XOc-OZ-iOW"/>
+                                    <constraint firstItem="ch6-Sz-oaJ" firstAttribute="centerY" secondItem="wHX-1k-rSO" secondAttribute="centerY" id="fsZ-bk-hAx"/>
+                                    <constraint firstItem="iD4-N5-xjO" firstAttribute="top" secondItem="wHX-1k-rSO" secondAttribute="topMargin" constant="10" id="puz-FL-blx"/>
+                                    <constraint firstItem="ch6-Sz-oaJ" firstAttribute="top" secondItem="wHX-1k-rSO" secondAttribute="topMargin" constant="8" id="tjy-Z5-VBf"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="2JL-5g-EC9"/>
+                                        <exclude reference="2Sa-9r-785"/>
+                                        <exclude reference="V07-c7-4Wl"/>
+                                        <exclude reference="fsZ-bk-hAx"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="Pallette-Town" translatesAutoresizingMaskIntoConstraints="NO" id="mfa-MW-EjR">
                                 <rect key="frame" x="0.0" y="95" width="600" height="505"/>
                             </imageView>
-                            <searchBar contentMode="redraw" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DYl-Nm-ZhE">
+                            <searchBar contentMode="redraw" ambiguous="YES" misplaced="YES" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="DYl-Nm-ZhE">
                                 <rect key="frame" x="0.0" y="51" width="600" height="44"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
@@ -49,7 +106,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="115" height="115"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="6" translatesAutoresizingMaskIntoConstraints="NO" id="rfl-0G-YY8">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rfl-0G-YY8">
                                                     <rect key="frame" x="0.0" y="0.0" width="115" height="89"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0C-l5-Oce">
@@ -133,6 +190,7 @@
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="9FQ-EC-Oyl" id="nau-iW-yIb"/>
+                        <outlet property="searchBar" destination="DYl-Nm-ZhE" id="2yq-tY-ZmJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -141,7 +199,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="6" width="137" height="120"/>
         <image name="Pallette-Town" width="640" height="960"/>
     </resources>
 </document>
