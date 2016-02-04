@@ -19,6 +19,7 @@
 		8708EC121C61D1E200E22776 /* PokemonHollow.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8708EC111C61D1E200E22776 /* PokemonHollow.ttf */; };
 		8708EC141C61D32600E22776 /* PokemonSolid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8708EC131C61D32600E22776 /* PokemonSolid.ttf */; };
 		8708EC161C61D8E300E22776 /* pokemonTheme.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8708EC151C61D8E300E22776 /* pokemonTheme.mp3 */; };
+		8708EC181C63014700E22776 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8708EC171C63014700E22776 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		8708EC111C61D1E200E22776 /* PokemonHollow.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PokemonHollow.ttf; sourceTree = "<group>"; };
 		8708EC131C61D32600E22776 /* PokemonSolid.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = PokemonSolid.ttf; sourceTree = "<group>"; };
 		8708EC151C61D8E300E22776 /* pokemonTheme.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pokemonTheme.mp3; sourceTree = "<group>"; };
+		8708EC171C63014700E22776 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				870430B91C6029BD0062FDCA /* ViewController.swift */,
+				8708EC171C63014700E22776 /* DetailViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				870430CD1C602E770062FDCA /* pokemon.swift in Sources */,
 				8708EC0B1C606BD200E22776 /* PokemonCell.swift in Sources */,
 				870430BA1C6029BD0062FDCA /* ViewController.swift in Sources */,
+				8708EC181C63014700E22776 /* DetailViewController.swift in Sources */,
 				870430B81C6029BD0062FDCA /* AppDelegate.swift in Sources */,
 				8708EC0E1C6086DB00E22776 /* csv.swift in Sources */,
 			);
