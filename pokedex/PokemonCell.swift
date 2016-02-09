@@ -23,5 +23,10 @@ class PokemonCell: UICollectionViewCell {
         thumbnailImage.image = UIImage(named: "\(self.pokemon.PokeId)")
     
     }
+    override func awakeFromNib() {
+        
+        thumbnailImage.layer.cornerRadius = 10
+        thumbnailImage.clipsToBounds = true
+    }
     
 }
