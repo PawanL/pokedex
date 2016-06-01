@@ -40,6 +40,7 @@ class DetailViewController: UIViewController {
         
         //called after download is done
         pokemon.downloadPokemonDetails { () -> () in
+            self.nextEvolution.hidden = true
             self.updateUI()
         }
     }
