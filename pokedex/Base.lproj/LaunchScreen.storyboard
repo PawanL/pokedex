@@ -17,16 +17,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n2A-kT-x2k">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iTunesArtwork" translatesAutoresizingMaskIntoConstraints="NO" id="JMn-WF-uaP">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="JMn-WF-uaP" secondAttribute="trailing" id="P0J-Qq-Vrx"/>
-                            <constraint firstItem="JMn-WF-uaP" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="aSv-oP-Ts6"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="JMn-WF-uaP" secondAttribute="bottom" id="fJ9-Qc-aaY"/>
-                            <constraint firstItem="JMn-WF-uaP" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="ngd-gg-tNl"/>
+                            <constraint firstItem="JMn-WF-uaP" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="3XY-LJ-k93"/>
+                            <constraint firstItem="n2A-kT-x2k" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="KZS-Cx-J7Y"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="n2A-kT-x2k" secondAttribute="bottom" id="PZU-CM-Ral"/>
+                            <constraint firstItem="n2A-kT-x2k" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="QbS-pI-H6c"/>
+                            <constraint firstAttribute="trailing" secondItem="n2A-kT-x2k" secondAttribute="trailing" id="XwJ-gL-dXH"/>
+                            <constraint firstItem="JMn-WF-uaP" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="fxr-s6-CBG"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="JMn-WF-uaP" secondAttribute="bottom" id="sie-8h-ruM"/>
+                            <constraint firstAttribute="trailing" secondItem="JMn-WF-uaP" secondAttribute="trailing" id="suU-7Q-P8n"/>
                         </constraints>
                     </view>
                 </viewController>

@@ -36,11 +36,11 @@ class DetailViewController: UIViewController {
         let img = UIImage(named: "\(pokemon.PokeId)")
         mainImage.image = img
         currentEvolution.image = img
-        
-        
+        self.nextEvolution.hidden = true
+        self.currentEvolution.hidden = true
         //called after download is done
         pokemon.downloadPokemonDetails { () -> () in
-            self.nextEvolution.hidden = true
+            
             self.updateUI()
         }
     }
@@ -59,9 +59,10 @@ class DetailViewController: UIViewController {
             currentEvolution.hidden = true
             nextEvolution.hidden = true
         }else{
+            currentEvolution.hidden = false
             nextEvolution.hidden = false
             nextEvolution.image = UIImage(named: pokemon.nextEvolutionId)
-            let str = "Next Evolution: Lvl \(pokemon.nextEvolutionLvl)"
+            let str = "Next Evolution: Lvl \(pokemon.nextEvolutionLvl) to \(pokemon.nextEvolution)"
             
             evolutionLabel.text = str
         }
